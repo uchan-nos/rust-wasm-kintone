@@ -14,6 +14,7 @@ git checkout "$target_branch"
 git rebase "${remote_name}/${main_branch}"
 
 rustup target add wasm32-unknown-unknown
+cargo install wasm-bindgen-cli
 
 ./build.sh
 git add "./pkg"
