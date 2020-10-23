@@ -11,7 +11,7 @@ git config user.name "$GITHUB_ACTOR"
 git config user.email "${GITHUB_ACTOR}@bots.github.com"
 
 git checkout "$target_branch"
-git rebase "${remote_name}/${main_branch}"
+git reset --hard "${remote_name}/${main_branch}"
 
 rustup target add wasm32-unknown-unknown
 cargo install wasm-bindgen-cli
