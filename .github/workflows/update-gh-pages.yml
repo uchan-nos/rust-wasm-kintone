@@ -8,6 +8,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
       - uses: actions/cache@v2
         with:
           path: |
@@ -15,10 +19,6 @@ jobs:
             ~/.cargo/git
             target
           key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
-
-      - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
