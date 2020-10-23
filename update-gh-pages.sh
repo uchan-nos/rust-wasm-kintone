@@ -17,9 +17,9 @@ rustup target add wasm32-unknown-unknown
 cargo install wasm-bindgen-cli
 
 ./build.sh
-git add "./pkg"
+git add -f "./pkg"
 
-git commit -m "updated GitHub Pages"
+git commit -m "updates GitHub Pages"
 if [ $? -ne 0 ]; then
     echo "nothing to commit"
     exit 0
