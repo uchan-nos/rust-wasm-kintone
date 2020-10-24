@@ -14,4 +14,5 @@
       text.innerText = greetMsg;
       greetEl.appendChild(textEl);
     })();
+  });
 }());
