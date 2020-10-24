@@ -4,7 +4,7 @@
   kintone.events.on('app.record.detail.show', (event) => {
     (async () => {
       console.log('initializing wasm');
-      await wasm_bindgen.wasm_bindgen(wasmPath);
+      await wasm_bindgen(wasmPath);
 
       const greetMsg = wasm_bindgen.greet(event.record['name']['value']);
       console.log(greetMsg);
