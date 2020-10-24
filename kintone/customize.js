@@ -11,7 +11,7 @@
 
       const greetEl = kintone.app.record.getSpaceElement('greet');
       const textEl = document.createElement('P');
-      text.innerText = greetMsg;
+      textEl.textContent = greetMsg;
       greetEl.appendChild(textEl);
     })();
   });
