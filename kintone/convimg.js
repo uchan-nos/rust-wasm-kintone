@@ -13,10 +13,18 @@
 
     await wasmLoadPromise;
 
+    const filterParams = {
+      'resize_scale':    parseFloat(event.record.resize_scale.value),
+      'rotate_angle':    parseInt(event.record.rotate_angle.value),
+      'huerotate_angle': parseInt(event.record.huerotate_angle.value),
+      'blur_sigma':      parseFloat(event.record.blur_sigma.value),
+      'brighten_value':  parseInt(event.record.brighten_value.value),
+    };
     // call Rust function 'convimg'
     const fileConverted = wasm_bindgen.convimg(
       new Uint8Array(fileContent),
-      event.record.filters.value // Array of string
+      event.record.filters.value, // Array of string
+      filterParams
     );
 
     // show the result as an image
