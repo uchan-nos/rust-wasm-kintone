@@ -14,7 +14,13 @@ git checkout "$target_branch"
 git reset --hard "${remote_name}/${main_branch}"
 
 rustup target add wasm32-unknown-unknown
-cargo install wasm-bindgen-cli
+
+if which wasm-bindgen
+then
+  echo "wasm-bindgen-cli has already been installed"
+else
+  cargo install wasm-bindgen-cli
+fi
 
 ./build.sh
 git add -f "./pkg"
