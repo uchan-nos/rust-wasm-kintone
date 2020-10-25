@@ -1049,6 +1049,7 @@ version = "0.1.0"
 dependencies = [
  "image",
  "js-sys",
+ "serde",
  "wasm-bindgen",
  "wasm-bindgen-cli",
 ]

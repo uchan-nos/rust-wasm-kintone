@@ -11,3 +11,4 @@ wasm-bindgen = { version = "0.2", features = [ "serde-serialize" ] }
 wasm-bindgen-cli = "0.2"
 js-sys = "0.3"
 image = "0.23"
+serde = "1.0"
